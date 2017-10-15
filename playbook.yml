@@ -1,0 +1,18 @@
+---
+- name: Install WP, Nginx and PHP-FPM
+  hosts: frontend
+  become: yes 
+  become_method: sudo 
+  roles: 
+    - base 
+    - nginx 
+    - php-fpm
+    - wordpress 
+
+- name: Install MariaDB
+  hosts: db
+  become: yes
+  become_method: sudo 
+  roles: 
+    - db 
+

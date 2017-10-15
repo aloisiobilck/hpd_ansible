@@ -1,0 +1,7 @@
+---
+- name: Instalar libselinux-python 
+  yum: name=libselinux-python state=present 
+
+- name: Reload no ansible_facts
+  setup: 
+
