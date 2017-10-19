@@ -1,0 +1,20 @@
+---
+- name: Install list of packages - CentOS
+  yum: name={{item}} state=present
+  with_items:
+       - net-tools
+  register: is_installed_rpm
+  when: ansible_os_family == "CentOS"
+
+- name: Install list of packages - Debian
+  apt: name={{item}} state=present
+  with_items:
+       - net-tools
+  register: is_installed_deb
+  when: ansible_os_family == "Debian"
+
+#- name: List package 
+#  yum: 
+#    list: net-toolsxs 
+#  register: result 
+#  when: ansible_os_family == "CentOS"

@@ -1,0 +1,7 @@
+---
+- name: Check package install
+  hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - check_package
